@@ -16,6 +16,7 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
+		System.out.println(result);
 		Assert.assertTrue(result);
 	}
 
@@ -31,6 +32,7 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
 				&& myLinkedList.tail.equals(myThirdNode);
+		System.out.println(result);
 		Assert.assertTrue(result);
 	}
 
@@ -46,6 +48,24 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
 				&& myLinkedList.tail.equals(myThirdNode);
+		System.out.println(result);
+		Assert.assertTrue(result);
+	}
+
+	@Test
+	public void givenFirstElementWhenDeleteShouldPassLinkedListResult() {
+		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
+		MyNodes<Integer> mySecondNode = new MyNodes<>(30);
+		MyNodes<Integer> myThirdNode = new MyNodes<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.pop();
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
+		myLinkedList.printMyNodes();
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
+				&& myLinkedList.tail.equals(myThirdNode);
+		System.out.println(result);
 		Assert.assertTrue(result);
 	}
 }
