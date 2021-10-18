@@ -22,15 +22,15 @@ public class MyLinkedList {
 		}
 	}
 
-	public void append(INode newNode) {
+	public void append(INode myNode) {
 		if (this.head == null) {
-			this.head = newNode;
+			this.head = myNode;
 		}
 		if (this.tail == null) {
-			this.tail = newNode;
+			this.tail = myNode;
 		} else {
-			this.tail.setNext(newNode);
-			this.tail = newNode;
+			this.tail.setNext(myNode);
+			this.tail = myNode;
 		}
 	}
 
