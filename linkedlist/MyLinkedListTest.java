@@ -17,7 +17,26 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
+<<<<<<< HEAD
 		System.out.println(result);
+=======
+		Assert.assertTrue(result);
+	}
+
+	@Test
+	public void given3NumbersWhenAppendedToLinkedListShouldBeAddedToLast() {
+		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
+		MyNodes<Integer> mySecondNode = new MyNodes<>(30);
+		MyNodes<Integer> myThirdNode = new MyNodes<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		System.out.println("append:");
+		myLinkedList.printMyNodes();
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myThirdNode);
+>>>>>>> Uc3_Appending
 		Assert.assertTrue(result);
 	}
 }
