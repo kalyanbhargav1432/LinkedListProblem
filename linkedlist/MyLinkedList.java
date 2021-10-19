@@ -65,6 +65,22 @@ public class MyLinkedList {
 		return tempNode;
 	}
 
+	public void deleteInBetween(INode getNode, INode setNode) {
+		INode temp = this.head;
+		getNode.setNext(setNode);
+	}
+
+	public void size() {
+		int i = 0;
+		final int list = 1;
+		INode temp = this.head;
+		while (temp.getNext() != null) {
+			temp = temp.getNext();
+			i++;
+		}
+		System.out.println("the total nodes:" + (i + list));
+	}
+
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");
 		INode tempNode = head;
