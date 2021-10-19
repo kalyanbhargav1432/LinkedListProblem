@@ -13,9 +13,11 @@ public class MyLinkedListTest {
 		myLinkedList.add(myFirstNode);
 		myLinkedList.add(mySecondNode);
 		myLinkedList.add(myThirdNode);
+		System.out.println("added:");
 		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.equals(mySecondNode)
+		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
+
 		System.out.println(result);
 		Assert.assertTrue(result);
 	}
@@ -29,8 +31,9 @@ public class MyLinkedListTest {
 		myLinkedList.add(myFirstNode);
 		myLinkedList.append(mySecondNode);
 		myLinkedList.append(myThirdNode);
+		System.out.println("append:");
 		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myThirdNode);
 		System.out.println(result);
 		Assert.assertTrue(result);
@@ -45,8 +48,9 @@ public class MyLinkedListTest {
 		myLinkedList.add(myFirstNode);
 		myLinkedList.append(myThirdNode);
 		myLinkedList.insert(myFirstNode, mySecondNode);
+		System.out.println("insert:");
 		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myThirdNode);
 		System.out.println(result);
 		Assert.assertTrue(result);
@@ -58,14 +62,16 @@ public class MyLinkedListTest {
 		MyNodes<Integer> mySecondNode = new MyNodes<>(30);
 		MyNodes<Integer> myThirdNode = new MyNodes<>(70);
 		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myThirdNode);
+		myLinkedList.add(mySecondNode);
 		myLinkedList.add(myFirstNode);
 		myLinkedList.pop();
-		myLinkedList.add(mySecondNode);
-		myLinkedList.add(myThirdNode);
+		System.out.println("first element delete:");
 		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
+		boolean result = myLinkedList.head.equals(mySecondNode) && myLinkedList.head.getNext().equals(myThirdNode)
 				&& myLinkedList.tail.equals(myThirdNode);
 		System.out.println(result);
 		Assert.assertTrue(result);
 	}
+
 }
