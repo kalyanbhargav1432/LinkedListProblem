@@ -13,8 +13,9 @@ public class MyLinkedListTest {
 		myLinkedList.add(myFirstNode);
 		myLinkedList.add(mySecondNode);
 		myLinkedList.add(myThirdNode);
+		System.out.println("added:");
 		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.equals(mySecondNode)
+		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
 		Assert.assertTrue(result);
 	}
@@ -28,8 +29,9 @@ public class MyLinkedListTest {
 		myLinkedList.add(myFirstNode);
 		myLinkedList.append(mySecondNode);
 		myLinkedList.append(myThirdNode);
+		System.out.println("append:");
 		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
