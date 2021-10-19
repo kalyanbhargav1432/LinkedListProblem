@@ -45,6 +45,15 @@ public class MyLinkedList {
 		this.head = head.getNext();
 		return tempNode;
 	}
+	public INode popLast() {
+		INode tempNode = head;
+		while(tempNode.getNext() != null) {
+			tempNode = tempNode.getNext();
+		}
+		this.tail = tempNode;
+		 head.getNext().setNext(null);
+		return tempNode;
+	} 
 
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");
