@@ -38,7 +38,6 @@ public class MyLinkedListTest {
 		System.out.println(result);
 		Assert.assertTrue(result);
 	}
-
 	@Test
 	public void given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListResult() {
 		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
