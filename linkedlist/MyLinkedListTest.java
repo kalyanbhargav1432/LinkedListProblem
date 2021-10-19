@@ -13,58 +13,10 @@ public class MyLinkedListTest {
 		myLinkedList.add(myFirstNode);
 		myLinkedList.add(mySecondNode);
 		myLinkedList.add(myThirdNode);
+		System.out.println("added:");
 		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.equals(mySecondNode)
+		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
-		System.out.println(result);
-		Assert.assertTrue(result);
-	}
-
-	@Test
-	public void given3NumbersWhenAppendedToLinkedListShouldBeAddedToLast() {
-		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
-		MyNodes<Integer> mySecondNode = new MyNodes<>(30);
-		MyNodes<Integer> myThirdNode = new MyNodes<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
-		myLinkedList.add(myFirstNode);
-		myLinkedList.append(mySecondNode);
-		myLinkedList.append(myThirdNode);
-		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
-				&& myLinkedList.tail.equals(myThirdNode);
-		System.out.println(result);
-		Assert.assertTrue(result);
-	}
-
-	@Test
-	public void given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListResult() {
-		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
-		MyNodes<Integer> mySecondNode = new MyNodes<>(30);
-		MyNodes<Integer> myThirdNode = new MyNodes<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
-		myLinkedList.add(myFirstNode);
-		myLinkedList.append(myThirdNode);
-		myLinkedList.insert(myFirstNode, mySecondNode);
-		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
-				&& myLinkedList.tail.equals(myThirdNode);
-		System.out.println(result);
-		Assert.assertTrue(result);
-	}
-
-	@Test
-	public void givenFirstElementWhenDeleteShouldPassLinkedListResult() {
-		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
-		MyNodes<Integer> mySecondNode = new MyNodes<>(30);
-		MyNodes<Integer> myThirdNode = new MyNodes<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
-		myLinkedList.add(myFirstNode);
-		myLinkedList.pop();
-		myLinkedList.add(mySecondNode);
-		myLinkedList.add(myThirdNode);
-		myLinkedList.printMyNodes();
-		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.equals(mySecondNode)
-				&& myLinkedList.tail.equals(myThirdNode);
 		System.out.println(result);
 		Assert.assertTrue(result);
 	}
