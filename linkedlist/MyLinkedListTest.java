@@ -38,6 +38,7 @@ public class MyLinkedListTest {
 		System.out.println(result);
 		Assert.assertTrue(result);
 	}
+
 	@Test
 	public void given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListResult() {
 		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
@@ -50,6 +51,24 @@ public class MyLinkedListTest {
 		System.out.println("insert:");
 		myLinkedList.printMyNodes();
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myThirdNode);
+		System.out.println(result);
+		Assert.assertTrue(result);
+	}
+
+	@Test
+	public void givenFirstElementWhenDeleteShouldPassLinkedListResult() {
+		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
+		MyNodes<Integer> mySecondNode = new MyNodes<>(30);
+		MyNodes<Integer> myThirdNode = new MyNodes<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myThirdNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myFirstNode);
+		myLinkedList.pop();
+		System.out.println("first element delete:");
+		myLinkedList.printMyNodes();
+		boolean result = myLinkedList.head.equals(mySecondNode) && myLinkedList.head.getNext().equals(myThirdNode)
 				&& myLinkedList.tail.equals(myThirdNode);
 		System.out.println(result);
 		Assert.assertTrue(result);
