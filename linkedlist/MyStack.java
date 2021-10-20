@@ -22,7 +22,10 @@ public class MyStack {
 
 	public void enqueue(INode myNode) {
 		myLinkedList.append(myNode);
+	}
 
+	public INode dequeue() {
+		return myLinkedList.popLast();
 	}
 
 	public void printStack() {
