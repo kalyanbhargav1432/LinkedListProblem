@@ -11,12 +11,20 @@ public class MyQueue {
 		myLinkedList.add(myNode);
 	}
 
+	public INode pop() {
+		return myLinkedList.pop();
+	}
+
 	public INode peak() {
 		return myLinkedList.head;
 	}
 
 	public void enqueue(INode myNode) {
 		myLinkedList.append(myNode);
+	}
+
+	public INode dequeue() {
+		return myLinkedList.popLast();
 	}
 
 	public void printStack() {
