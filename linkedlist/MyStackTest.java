@@ -33,32 +33,4 @@ class MyStackTest {
 		myStack.printStack();
 		Assert.assertEquals(myThirdNode, popedNode);
 	}
-
-	@Test
-	public void given3NumbersInStackWhenpopedShouldBeMatchWithLastAddedNode() {
-		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
-		MyNodes<Integer> mySecondNode = new MyNodes<>(30);
-		MyNodes<Integer> myThirdNode = new MyNodes<>(70);
-		MyStack myStack = new MyStack();
-		myStack.enqueue(myFirstNode);
-		myStack.enqueue(mySecondNode);
-		myStack.enqueue(myThirdNode);
-		INode peak = myStack.peak();
-		myStack.printStack();
-		Assert.assertEquals(myFirstNode, peak);
-	}
-	@Test
-	public void given3NumbersInStackQueueWhenpopedShouldMatchWithLastAddedNode() {
-		MyNodes<Integer> myFirstNode = new MyNodes<>(56);
-		MyNodes<Integer> mySecondNode = new MyNodes<>(30);
-		MyNodes<Integer> myThirdNode = new MyNodes<>(70);
-		MyStack myStack = new MyStack();
-		myStack.enqueue(myFirstNode);
-		myStack.enqueue(mySecondNode);
-		myStack.enqueue(myThirdNode);
-		INode peak = myStack.peak();
-		INode dequeue = myStack.pop();
-		myStack.printStack();
-		Assert.assertEquals(myFirstNode, peak);
-	}
 }
